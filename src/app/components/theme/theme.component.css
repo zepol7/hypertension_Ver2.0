@@ -1,0 +1,25 @@
+mat-grid-list {
+    display: flex;
+    margin-bottom: 10%;
+    width: 100%;
+    justify-content: center;
+}
+
+button {
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: blue;
+    width: 90%;
+    height: 90%;
+    background-image: url('https://img.medscapestatic.com/es/thumbnail_library/dt_220114_hypertension_concept_800x450.png'); /* Cambia 'ruta-de-la-imagen.jpg' por la URL de tu imagen */
+    background-size: cover; /* Ajustar la imagen al tamaño del botón */
+    background-position: center; /* Centrar la imagen en el botón */
+    background-repeat: no-repeat; /* Evitar que la imagen se repita */
+    padding: 10px 20px; /* Agregar un poco de espacio alrededor de la imagen */
+    border: none; /* Eliminar el borde predeterminado del botón */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de fuente del texto */
+    border: 2px solid #2d627c;
+    border-radius: 30px;
+  }

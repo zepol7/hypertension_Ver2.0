@@ -1,0 +1,22 @@
+<h2 class="card-title" >{{ data.title }}</h2>
+
+<div class="lista2" *ngFor="let item of data.content">
+    <ul>
+      <li>{{ item }}</li>
+   </ul>
+</div>
+
+
+
+
+<div mat-dialog-actions>
+  <span class="example-spacer"></span>
+  <div class="example-button-row">
+
+    <button [style.background-color]="'#87ceeb'" [style.color]="'#000'" class="btn btn-primary" mat-flat-button mat-dialog-close color="primary">Cerrar</button>
+  </div>
+
+
+
+
+</div>

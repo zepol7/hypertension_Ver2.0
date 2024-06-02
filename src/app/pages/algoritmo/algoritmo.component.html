@@ -1,0 +1,397 @@
+
+<body>
+<header>
+    <mat-toolbar align-items="center" justify-content="center" >
+
+
+        <mat-toolbar-row>
+          <span class="example-spacer"></span>
+          <div class="example-button-row">
+
+            <button class="btn btn-primary" mat-flat-button (click)="openDialogRecomendaciones()" [style.background-color]="'#2d627c'" [style.color]="'#ffffff'">Recomendaciones</button>
+            <button class="btn btn-primary" mat-flat-button (click)="recargar()" [style.background-color]="'#2d627c'" [style.color]="'#ffffff'">Reiniciar</button>
+
+          </div>
+
+
+
+
+
+        </mat-toolbar-row>
+
+
+
+    </mat-toolbar>
+</header>
+
+<div class="principal">
+
+    <div *ngIf="principal">
+        <mat-card class="card-class">
+            <mat-card-header>
+                <mat-card-title>¿Paciente con Diabetes Mellitus?</mat-card-title>
+            </mat-card-header>
+             <mat-card-footer>
+                <button class="button-class" *ngIf="ocultar" mat-flat-button  aria-label="Si" (click)="q0si()" [style.background-color]="'#60874d'" [style.color]="'#ffffff'">
+                    <h3>Si</h3>
+                </button>
+                <button class="button-class2" *ngIf="ocultar0" mat-flat-button aria-label="No" (click)="q0sis()" [style.background-color]="'#930a36'" [style.color]="'#ffffff'">
+                    <h3>No</h3>
+                </button>
+             </mat-card-footer>
+        </mat-card>
+    </div>
+
+    <div *ngIf="principal2">
+        <mat-card class="card-class">
+            <mat-card-header>
+                <mat-card-title>¿Control o Primera vez?</mat-card-title>
+            </mat-card-header>
+                <mat-card-footer>
+                <button class="button-class" *ngIf="ocultarp" mat-flat-button  aria-label="Control" (click)="controlsi()" [style.background-color]="'#60874d'" [style.color]="'#ffffff'">
+                    <h3>Control</h3>
+                </button>
+                <button class="button-class2" *ngIf="ocultar0p" mat-flat-button aria-label="Primera Vez" (click)="pmsi()" [style.background-color]="'#930a36'" [style.color]="'#ffffff'">
+                    <h3>Primera Vez</h3>
+                </button>
+                </mat-card-footer>
+        </mat-card>
+    </div>
+
+    <div *ngIf="control">
+        <mat-card class="card-class">
+            <mat-card-content>
+              <table class="demo-table">
+                <thead>
+                  <tr>
+                    <th colspan="2">
+                      <mat-card-title><h3>Tipo de Control</h3></mat-card-title>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="mat-column-demo-name mat-fila">Esta bajo regimen ARB-CCB A MITAD DE DOSIS?</td>
+                    <td >
+                      <button class="button-class" *ngIf="ocultar5" mat-flat-button [style.background-color]="'#60874d'" [style.color]="'#ffffff'" aria-label="Si" (click)="q3si()">
+                        <h3>1</h3>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mat-column-demo-name mat-fila">Esta bajo regimen ARB-CCB A DOSIS COMPLETA?</td>
+                    <td>
+                      <button class="button-class" *ngIf="ocultar9" mat-flat-button [style.background-color]="'#60874d'" [style.color]="'#ffffff'" aria-label="Si" (click)="q5si()">
+                        <h3>2</h3>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mat-column-demo-name mat-fila">Esta bajo regimen ARB-CCB A DOSIS COMPLETA, incluyendo tiazidas y diureticos a la mitad de la dosis maxima?</td>
+                    <td>
+                      <button class="button-class" *ngIf="ocultar13" mat-flat-button [style.background-color]="'#60874d'" [style.color]="'#ffffff'" aria-label="Si" (click)="q7si()">
+                        <h3>3</h3>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="mat-column-demo-name mat-fila">Esta bajo regimen ARB-CCB A DOSIS COMPLETA, incluyendo tiazidas y diureticos a la dosis maxima?</td>
+                    <td>
+                      <button class="button-class" *ngIf="ocultar17" mat-flat-button [style.background-color]="'#60874d'" [style.color]="'#ffffff'" aria-label="Si" (click)="q9si()">
+                        <h3>4</h3>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+
+
+
+            </mat-card-content>
+
+        </mat-card>
+    </div>
+
+    <div *ngIf="mostrarTarjeta0">
+    <mat-card class="card-class">
+        <mat-card-header>
+            <mat-card-title>Ingrese los valores de presión arterial</mat-card-title>
+        </mat-card-header>
+        <mat-card-content flex-direction="column" align-items="center" justify-content="center">
+            <mat-form-field class="example-form-field">
+            <mat-label [style.color]="'#2d627c'">Sistólica (mmHg)</mat-label>
+            <input matInput type="number" [(ngModel)]="value1">
+            </mat-form-field>
+            <mat-form-field class="example-form-field">
+            <mat-label [style.color]="'#2d627c'">Diastólica (mmHg)</mat-label>
+            <input matInput type="number" [(ngModel)]="value2">
+            </mat-form-field>
+            </mat-card-content>
+         <mat-card-footer>
+            <button matSuffix mat-icon-button aria-label="Guardar" (click)="guardar()">
+                <mat-icon [style.color]="'#2d627c'">save</mat-icon>
+            </button>
+         </mat-card-footer>
+    </mat-card>
+    </div>
+
+    <div *ngIf="mostrarTarjeta">
+        <mat-card class="card-class">
+            <mat-card-header>
+                <mat-card-title>Inicie terapia combinada a mitad de la dosis</mat-card-title>
+            </mat-card-header>
+
+            <div class="example-button-row">
+              <button class="btn btn-primary" mat-flat-button (click)="openDialogOpcion1()" [style.background-color]="'#2d627c'" [style.color]="'#ffffff'">Opciones de medicamentos</button>
+            </div>
+
+
+            <mat-card-footer>
+              <div class="example-button-row">
+                <button class="button-class" *ngIf="ocultar1" mat-flat-button [style.background-color]="'#60874d'" [style.color]="'#ffffff'" aria-label="Si" (click)="q1si()">
+                    <h3>Continuar</h3>
+                </button>
+              </div>
+                <!--<button class="button-class2" *ngIf="ocultar2" mat-flat-button [style.background-color]="'#930a36'" [style.color]="'#ffffff'" aria-label="No" (click)="q0no()">
+                    <h3>No</h3>
+                </button>-->
+             </mat-card-footer>
+        </mat-card>
+    </div>
+
+    <div *ngIf="mostrarTarjeta2">
+        <mat-card class="card-class">
+            <mat-card-header>
+                <mat-card-title>Verifique la adherencia al tratamiento actual y cite para toma de presión arterial en 4 semanas.</mat-card-title>
+            </mat-card-header>
+            <mat-card-header>
+              <mat-card-title>Algoritmo finalizado</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </div>
+
+    <div *ngIf="mostrarTarjeta4">
+    <mat-card class="card-class">
+        <mat-card-header>
+            <mat-card-title>Ingrese los valores de presión arterial</mat-card-title>
+        </mat-card-header>
+        <mat-card-content flex-direction="column" align-items="center" justify-content="center">
+            <mat-form-field class="example-form-field">
+            <mat-label>Sistólica (mmHg)</mat-label>
+            <input matInput type="number" [(ngModel)]="value1">
+            </mat-form-field>
+            <mat-form-field class="example-form-field">
+            <mat-label>Diastólica (mmHg)</mat-label>
+            <input matInput type="number" [(ngModel)]="value2">
+            </mat-form-field>
+            </mat-card-content>
+         <mat-card-footer>
+            <button matSuffix mat-icon-button aria-label="Guardar" (click)="guardar2()">
+                <mat-icon>save</mat-icon>
+            </button>
+         </mat-card-footer>
+    </mat-card>
+    </div>
+
+    <div *ngIf="mostrarTarjeta5">
+        <mat-card class="card-class">
+            <mat-card-header>
+                <mat-card-title>Aumente la dosis de la terapia combinada a dosis plena.</mat-card-title>
+            </mat-card-header>
+            <div class="example-button-row">
+              <button class="btn btn-primary" mat-flat-button (click)="openDialogOpcion2()" [style.background-color]="'#2d627c'" [style.color]="'#ffffff'">Opciones de medicamentos</button>
+            </div>
+             <mat-card-footer>
+              <div class="example-button-row">
+                <button class="button-class" *ngIf="ocultar7" mat-flat-button [style.background-color]="'#60874d'" [style.color]="'#ffffff'" aria-label="Si" (click)="q4si()">
+                    <h3>Continuar</h3>
+                </button>
+              </div>
+                <!--<button class="button-class2" *ngIf="ocultar8" mat-flat-button [style.background-color]="'#930a36'" [style.color]="'#ffffff'" aria-label="No" (click)="q0no()">
+                    <h3>No</h3>
+                </button>-->
+             </mat-card-footer>
+        </mat-card>
+    </div>
+
+    <div *ngIf="mostrarTarjeta6">
+        <mat-card class="card-class">
+            <mat-card-header>
+              <mat-card-title>Verifique la adherencia al tratamiento actual y cite para toma de presión arterial en 4 semanas.</mat-card-title>
+            </mat-card-header>
+            <mat-card-header>
+              <mat-card-title>Algoritmo finalizado</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </div>
+
+    <div *ngIf="mostrarTarjeta7">
+    <mat-card class="card-class">
+        <mat-card-header>
+            <mat-card-title>Ingrese los valores de presión arterial</mat-card-title>
+        </mat-card-header>
+        <mat-card-content flex-direction="column" align-items="center" justify-content="center">
+            <mat-form-field class="example-form-field">
+            <mat-label>Sistólica (mmHg)</mat-label>
+            <input matInput type="number" [(ngModel)]="value1">
+            </mat-form-field>
+            <mat-form-field class="example-form-field">
+            <mat-label>Diastólica (mmHg)</mat-label>
+            <input matInput type="number" [(ngModel)]="value2">
+            </mat-form-field>
+            </mat-card-content>
+         <mat-card-footer>
+            <button matSuffix mat-icon-button aria-label="Guardar" (click)="guardar3()">
+                <mat-icon>save</mat-icon>
+            </button>
+         </mat-card-footer>
+    </mat-card>
+    </div>
+
+    <div *ngIf="mostrarTarjeta8">
+        <mat-card class="card-class">
+            <mat-card-header>
+                <mat-card-title>Agregue a la terapia combinada un diurético tiazidico a mitad de la dosis máxima.</mat-card-title>
+            </mat-card-header>
+            <div class="example-button-row">
+              <button class="btn btn-primary" mat-flat-button (click)="openDialogOpcion3()" [style.background-color]="'#2d627c'" [style.color]="'#ffffff'">Opciones de medicamentos</button>
+            </div>
+             <mat-card-footer>
+              <div class="example-button-row">
+                <button class="button-class" *ngIf="ocultar11" mat-flat-button [style.background-color]="'#60874d'" [style.color]="'#ffffff'" aria-label="Si" (click)="q6si()">
+                    <h3>Continuar</h3>
+                </button>
+              </div>
+                <!--<button class="button-class2" *ngIf="ocultar12" mat-flat-button [style.background-color]="'#930a36'" [style.color]="'#ffffff'" aria-label="No" (click)="q0no()">
+                    <h3>No</h3>
+                </button>-->
+             </mat-card-footer>
+        </mat-card>
+    </div>
+
+    <div *ngIf="mostrarTarjeta9">
+        <mat-card class="card-class">
+            <mat-card-header>
+                <mat-card-title>Verifique la adherencia al tratamiento actual y cite para toma de presión arterial en 4 semanas.</mat-card-title>
+            </mat-card-header>
+            <mat-card-header>
+              <mat-card-title>Algoritmo finalizado</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </div>
+
+    <div *ngIf="mostrarTarjeta10">
+        <mat-card class="card-class">
+            <mat-card-header>
+                <mat-card-title>Ingrese los valores de presión arterial</mat-card-title>
+            </mat-card-header>
+            <mat-card-content flex-direction="column" align-items="center" justify-content="center">
+                <mat-form-field class="example-form-field">
+                <mat-label>Sistólica (mmHg)</mat-label>
+                <input matInput type="number" [(ngModel)]="value1">
+                </mat-form-field>
+                <mat-form-field class="example-form-field">
+                <mat-label>Diastólica (mmHg)</mat-label>
+                <input matInput type="number" [(ngModel)]="value2">
+                </mat-form-field>
+                </mat-card-content>
+             <mat-card-footer>
+                <button matSuffix mat-icon-button aria-label="Guardar" (click)="guardar4()">
+                    <mat-icon>save</mat-icon>
+                </button>
+             </mat-card-footer>
+        </mat-card>
+        </div>
+
+    <div *ngIf="mostrarTarjeta11">
+        <mat-card class="card-class">
+            <mat-card-header>
+                <mat-card-title>Aumente el diurético tiazidico a la dosis máxima</mat-card-title>
+            </mat-card-header>
+            <div class="example-button-row">
+              <button class="btn btn-primary" mat-flat-button (click)="openDialogOpcion4()" [style.background-color]="'#2d627c'" [style.color]="'#ffffff'">Opciones de medicamentos</button>
+            </div>
+                <mat-card-footer>
+                <div class="example-button-row">
+                <button class="button-class" *ngIf="ocultar15" mat-flat-button [style.background-color]="'#60874d'" [style.color]="'#ffffff'" aria-label="Si" (click)="q8si()">
+                    <h3>Continuar</h3>
+                </button>
+              </div>
+                <!--<button class="button-class2" *ngIf="ocultar16" mat-flat-button [style.background-color]="'#930a36'" [style.color]="'#ffffff'" aria-label="No" (click)="q0no()">
+                    <h3>No</h3>
+                </button>-->
+                </mat-card-footer>
+        </mat-card>
+    </div>
+
+    <div *ngIf="mostrarTarjeta12">
+        <mat-card class="card-class">
+            <mat-card-header>
+                <mat-card-title>Verifique la adherencia al tratamiento actual y cite para toma de presión arterial en 4 semanas.</mat-card-title>
+            </mat-card-header>
+            <mat-card-header>
+              <mat-card-title>Algoritmo finalizado</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </div>
+
+    <div *ngIf="mostrarTarjeta13">
+        <mat-card class="card-class">
+            <mat-card-header>
+                <mat-card-title>Ingrese los valores de presión arterial</mat-card-title>
+            </mat-card-header>
+            <mat-card-content flex-direction="column" align-items="center" justify-content="center">
+                <mat-form-field class="example-form-field">
+                <mat-label>Sistólica (mmHg)</mat-label>
+                <input matInput type="number" [(ngModel)]="value1">
+                </mat-form-field>
+                <mat-form-field class="example-form-field">
+                <mat-label>Diastólica (mmHg)</mat-label>
+                <input matInput type="number" [(ngModel)]="value2">
+                </mat-form-field>
+                </mat-card-content>
+             <mat-card-footer>
+                <button matSuffix mat-icon-button aria-label="Guardar" (click)="guardar5()">
+                    <mat-icon>save</mat-icon>
+                </button>
+             </mat-card-footer>
+        </mat-card>
+        </div>
+
+    <div *ngIf="mostrarTarjeta14">
+        <mat-card class="card-class">
+            <mat-card-header>
+                <mat-card-title>No se cumplió la meta, remita a un Médico especialista</mat-card-title>
+            </mat-card-header>
+            <mat-card-header>
+              <mat-card-title>Algoritmo finalizado</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </div>
+
+
+    <div *ngIf="mostrarTarjeta111">
+        <mat-card class="card-class">
+            <mat-card-header>
+                <mat-card-title>Algoritmo finalizado</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </div>
+
+    <div *ngIf="mostrarTarjeta112">
+        <mat-card class="card-class">
+            <mat-card-header>
+                <mat-card-title>Continue con el tratamiento actual y cite en 3 meses. </mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </div>
+
+</div>
+<footer>
+    <img src="assets/hope.png" alt="Icono de corazón" width="200" height="50">
+</footer>
+</body>
+
+
+
